@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<title>Page Title</title>
+</head>
+<body>
+
+<h1>This is a Heading</h1>
+<p>This is a paragraph.</p>
+
+<br>
+
+<table border='1'>
+    <tbody>
+    	<tr>
+        	<td>100</td>
+          	<td>7</td>
+            <td>107</td>
+            <td>3</td>
+            <td>104</td>
+        </tr>
+        <tr>
+        	<td><input type='text' name='get_num1'></td>
+            <td><input type='text' name='get_num2'></td>
+            <td><input type='text' name='get_num3'></td>
+            <td><input type='text' name='get_num4'></td>
+            <td><input type='text' name='get_num5'></td>
+        </tr>
+    </tbody>
+</table>
+
+<br>
+
+<div>
+	<button onclick='calculate_sum();' >Go!!</button>
+    &nbsp;&nbsp;
+    <a href='#' onclick="reset();">Clear</a>
+<div>
+
+</body>
+<script>
+
+	function reset(){
+       	for(i=0; i<=5; i++){
+    		$("[name='get_num"+i+"']").val("");
+    	}
+    }
+
+	function calculate_sum(){
+    	var num1 = $("[name=get_num1]").val();
+        var num2 = $("[name=get_num2]").val();
+        var num3 = $("[name=get_num3]").val();
+        var num4 = $("[name=get_num4]").val();
+        var num5 = $("[name=get_num5]").val();
+        
+        if(num1!=""){
+            
+        	$("[name='get_num1']").val( num1 );
+            $("[name='get_num2']").val( (num1*7)/100 );
+            $("[name='get_num3']").val( (num1*107)/100 );
+            $("[name='get_num4']").val( (num1*3)/100 );
+            $("[name='get_num5']").val( (num1*104)/100 );
+        
+        }else if(num2!=""){
+            
+            cal2 = (num2*100/7);
+            
+        	$("[name='get_num1']").val( cal2 );
+            $("[name='get_num2']").val( num2 );
+            $("[name='get_num3']").val( (cal2*107)/100 );
+            $("[name='get_num4']").val( (cal2*3)/100 );
+            $("[name='get_num5']").val( (cal2*104)/100 );
+        
+        }else if(num3!=""){
+        
+        	cal3 = (num3/107*100);
+        
+        	$("[name='get_num1']").val( cal3 );
+            $("[name='get_num2']").val( (cal3*7)/100 );
+            $("[name='get_num3']").val( num3 );
+            $("[name='get_num4']").val( (cal3*3)/100 );
+            $("[name='get_num5']").val( (cal3*104)/100 );
+        
+        }else if(num4!=""){
+        
+        	cal4 = (num4/3*100);
+        
+        	$("[name='get_num1']").val( cal4 );
+            $("[name='get_num2']").val( (cal4*7)/100 );
+            $("[name='get_num3']").val( (cal4*107)/100 );
+            $("[name='get_num4']").val( num4 );
+            $("[name='get_num5']").val( (cal4*104)/100 );
+        
+        }else{
+        
+        	cal5 = (num5/104*100)
+        
+        	$("[name='get_num1']").val( cal5 );
+            $("[name='get_num2']").val( (cal5*7)/100 );
+            $("[name='get_num3']").val( (cal5*107)/100 );
+            $("[name='get_num4']").val( (cal5*3)/100 );
+            $("[name='get_num5']").val( num5 );
+        
+        }
+        
+    }
+
+</script>
+</html>
+
+

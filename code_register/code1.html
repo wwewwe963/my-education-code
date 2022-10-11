@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<title>Page Title</title>
+</head>
+<body>
+
+<h1>This is a Heading</h1>
+<p>This is a paragraph.</p>
+
+<br>
+
+<table>
+    <tbody>
+    	<tr>
+        	<td>Number : </td>
+            <td><input type='text' name='key_number'>
+            	 &nbsp;&nbsp; 
+            	<button onclick='loop_piramit($("[name=key_number]").val())' > Submit </button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<div name='pyramid' ></div>
+
+</body>
+<script>
+
+	function loop_piramit(target){
+    	var number = target;
+        var text = "";
+        
+        if(number % 2===0){
+        	for(i=0; i<number; i++){
+            	for(j=0; j<=i; j++){
+            		text += "*";
+            	}
+            	text += "<br />";
+        	}
+        }else{
+        	for(i=number; i>0; i--){
+            	for(j=i; j>0; j--){
+                	text += "*";
+                }
+            	text += "<br />";
+            }
+        }
+        $("[name=pyramid]").html(text);
+    }
+
+</script>
+</html>
+
+

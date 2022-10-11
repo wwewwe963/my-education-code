@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<?php
+
+	$arr1 = array(
+    				array(
+                    	  "code"=>101,
+                    	  "name"=>"AAA"
+                    ),
+                    array(
+                    	  "code"=>102,
+                    	  "name"=>"BBB"
+                    ),
+                    array(
+                    	  "code"=>103,
+                    	  "name"=>"CCC"
+                    )
+    		);
+            
+     $arr2 = array(
+    				array(
+                    	  "code"=>103,
+                    	  "city"=>"Singapore"
+                    ),
+                    array(
+                    	  "code"=>102,
+                    	  "city"=>"Tokyo"
+                    ),
+                    array(
+                    	  "code"=>101,
+                    	  "city"=>"Bangkok"
+                    )
+    		);
+
+?>
+<html>
+<body>
+
+<div><?php echo "My first PHP script! "; ?></div>
+            
+<br><br>
+
+<table border='1'>
+	<tbody>
+		<tr>
+    		<td>Code</td>
+        	<td>Name</td>
+    	</tr>
+    	<?php foreach($arr1 as $item){ ?>	
+    	<tr>
+    	<td><?php echo $item["code"]; ?></td>
+    	<td><?php echo $item["name"]; ?></td>
+    	</tr>
+    	<?php } ?>
+	</tbody>
+</table>
+    
+<br><br>
+
+<table border='1'>
+	<tbody>
+		<tr>
+			<td>Code</td>
+        	<td>Name</td>
+    	</tr>
+		<?php foreach($arr2 as $item){ ?>
+    	<tr>
+        	<td><?php echo $item["code"]; ?></td>
+        	<td><?php echo $item["city"]; ?></td>
+    	</tr>
+    	<?php } ?>
+    </tbody>
+</table>
+    
+<br><hr><br>
+    
+<table border='1'>
+	<tbody>
+    	<tr>
+        	<td>Code</td>
+            <td>Name</td>
+            <td>City</td>
+        </tr>
+		<?php foreach($arr1 as $item){
+
+        $search = array();
+        foreach($arr2 as $a){ 
+        	if($item["code"] == $a["code"]){ $search = $a; } 
+        }
+        
+        ?>    
+        <tr>
+        	<td><?php echo $item["code"]; ?></td>
+        	<td><?php echo $item["name"]; ?></td>
+        	<td><?php echo $search["city"]; ?></td>
+        </tr>
+      	<?php } ?>
+    </tbody>
+</table>
+
+</body>
+</html>
